@@ -1,0 +1,30 @@
+_Query for statistics on rental rate_
+
+SELECT min(rental_rate) AS min_rent,
+max(rental_rate) as max_rent,
+avg(rental_rate) as avg_rent
+FROM film
+
+
+_Query for statistics on film length_
+
+SELECT MIN(length) AS min_length,
+MAX (length) AS max_length,
+AVG(length) AS avg_length
+FROM film
+
+
+_Query for statistics on rental duration_
+
+SELECT MIN(rental_duration) AS min_duration,
+MAX (rental_duration) AS max_duration,
+AVG(rental_duration) AS avg_duration
+FROM film
+
+
+_Query for statistics on replacement cost_
+
+SELECT MIN(replacement_cost) AS min_replacement_cost,
+MAX (replacement_cost) AS max_replacement_cost,
+AVG(replacement_cost) AS avg_replacement_cost
+FROM film
