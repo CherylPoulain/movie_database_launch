@@ -41,3 +41,14 @@ SELECT mode() WITHIN GROUP (ORDER BY language_id)
 AS modal_value
 FROM film
 
+
+_Query for finding mode of release year_
+SELECT mode() WITHIN GROUP (ORDER BY release_year) 
+AS modal_value
+FROM film
+
+
+_Query for finding mode of customer profile created date_
+SELECT mode() WITHIN GROUP (ORDER BY create_date) 
+AS modal_value
+FROM customer
