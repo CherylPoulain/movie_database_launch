@@ -1,6 +1,6 @@
 __QUERIES TO MEET CERTAIN CONDITIONS__
 
-_Film title contains the word Uptown in any position_
+**Film title contains the word Uptown in any position**
 SELECT film_ID,
        title,
        description
@@ -9,7 +9,7 @@ WHERE title LIKE
 ‘%Uptown%’
 
 
-_Rental duration is between 3 and 7 days (where 3 and 7 aren’t inclusive)_
+**Rental duration is between 3 and 7 days (where 3 and 7 aren’t inclusive)**
 SELECT film_ID,
        title,
        description
@@ -17,7 +17,7 @@ FROM film
 WHERE rental_duration BETWEEN 4 AND 6
 
 
-_Film replacement cost is less than 14.99_
+**Film replacement cost is less than 14.99**
 SELECT film_ID,
        title,
        description
@@ -25,7 +25,7 @@ FROM film
 WHERE replacement_cost<14.99
 
 
-_Film rating is either PG or G_
+**Film rating is either PG or G**
 SELECT film_ID,
        title,
        description
@@ -37,13 +37,13 @@ OR rating = ‘G’
 
 __FINDING REQUESTED INFO ON PG OR G QUERY OUTPUT__
 
-_Average rental rate_
+**Average rental rate**
 SELECT AVG(rental_rate)	
 FROM film	
 WHERE rating IN('PG','G')	
 
 
-_Maximum and minimum rental duration_
+**Maximum and minimum rental duration**
 SELECT MAX(rental_duration),		
 MIN(rental_duration)		
 FROM film		
