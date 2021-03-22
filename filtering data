@@ -1,0 +1,94 @@
+__QUERIES TO MEET CERTAIN CONDITIONS__
+
+_Film title contains the word Uptown in any position_
+SELECT film_ID,
+       title,
+       description
+FROM film
+WHERE title LIKE 
+‘%Uptown%’
+
+
+_Rental duration is between 3 and 7 days (where 3 and 7 aren’t inclusive)_
+SELECT film_ID,
+       title,
+       description
+FROM film
+WHERE rental_duration BETWEEN 4 AND 6
+
+
+_Film replacement cost is less than 14.99_
+SELECT film_ID,
+       title,
+       description
+FROM film
+WHERE replacement_cost<14.99
+
+
+_Film rating is either PG or G_
+SELECT film_ID,
+       title,
+       description
+FROM film
+WHERE rating = ‘PG’
+OR rating = ‘G’
+
+
+
+__FINDING REQUESTED INFO ON PG OR G QUERY OUTPUT__
+
+_Average rental rate_
+SELECT AVG(rental_rate)	
+FROM film	
+WHERE rating IN('PG','G')	
+
+
+_Maximum and minimum rental duration_
+SELECT MAX(rental_duration),		
+MIN(rental_duration)		
+FROM film		
+WHERE rating IN('PG','G')		
+
+
+
+__CREATING COLUMN ALIASES__
+
+SELECT COUNT(film_id)AS count_of_movies				
+FROM film				
+WHERE rating IN('PG','G')				
+
+SELECT AVG(rental_rate) AS average_movie_rental_rate					
+FROM film					
+WHERE rating IN('PG','G')					
+					
+          
+SELECT MAX(rental_duration) AS maximum_rental_duration,					
+   MIN(rental_duration) AS minimum_rental_duration					
+FROM film					
+WHERE rating IN('PG','G')			
+
+
+
+__REQUESTED INFORMATION GROUPED BY RATING__
+
+SELECT COUNT(film_id)AS count_of_movies,				
+rating				
+FROM film				
+WHERE rating IN('PG','G')				
+GROUP BY rating				
+
+
+SELECT rating,				
+AVG(rental_rate) AS average_movie_rental_rate				
+FROM film				
+WHERE rating IN('PG','G')				
+GROUP BY rating				
+
+
+SELECT rating,				
+MAX(rental_duration) AS maximum_rental_duration,				
+MIN(rental_duration) AS minimum_rental_duration				
+FROM film				
+WHERE rating IN('PG','G')				
+GROUP BY rating				
+
