@@ -1,11 +1,11 @@
-_'Read' what film genres already exist in the category table_
+**'Read' what film genres already exist in the category table**
 
 SELECT*
 FROM category
 
 
 
-_'Create' new genres_
+**'Create' new genres**
 
 INSERT INTO category (name)
 VALUES('Thriller') 
@@ -15,7 +15,7 @@ VALUES('Crime')
 
 
 
-_'Update' film's genre_
+**'Update' film's genre**
 
 SELECT film_id
 FROM film
@@ -31,6 +31,6 @@ WHERE film_id= 5
 
 
 
-_'Delete' film category_
+**'Delete' film category**
 DELETE FROM category
 WHERE category_id = 19
