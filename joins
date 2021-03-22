@@ -1,4 +1,4 @@
- _Find the top 10 countries for Rockbuster in terms of customer numbers_
+**Find the top 10 countries for Rockbuster in terms of customer numbers**
 
 SELECT D.country,
        COUNT(customer_id) AS count_customer_id
@@ -12,7 +12,7 @@ LIMIT 10
 
 
 
-_Find the top 10 cities within the top 10 countries identified in earlier step_
+**Find the top 10 cities within the top 10 countries identified in earlier step**
 
 SELECT C.city,
        D.country,
@@ -39,7 +39,7 @@ LIMIT 10
 
 
 
-_Find the top 5 customers (in the top 10 cities identified in earlier step) who have paid the highest total amounts to Rockbuster_
+**Find the top 5 customers (in the top 10 cities identified in earlier step) who have paid the highest total amounts to Rockbuster**
 
 SELECT A.customer_id,
         B.first_name AS Customer_First_Name,
