@@ -1,0 +1,57 @@
+_Query for checking Film Table for duplicates_
+
+SELECT film_id,
+       title,
+       release_year,
+       language_id,
+       rental_duration,
+       rental_rate,
+       COUNT(*)
+FROM film
+GROUP BY film_id,
+      title,
+      release_year,
+      language_id,
+      rental_duration,
+      rental_rate
+HAVING COUNT(*)>1
+
+
+
+_Query for checking Film Table for missing data_
+
+SELECT film_id
+FROM film
+WHERE film_id = NULL
+
+SELECT title
+FROM film
+WHERE title = NULL
+
+SELECT rental_rate
+FROM film
+WHERE rental_rate = NULL
+
+SELECT language_id
+FROM film
+WHERE language_id = NULL
+
+
+
+_Queries to summarize data by calculating descriptive statistics_
+
+SELECT MIN (rental_rate) AS min_rent,
+MAX (rental_rate) AS max_rent
+AVG (rental_rate) AS avg_rent
+FROM film
+
+
+SELECT MIN (length) AS min_length,
+MAX (length) AS max_length
+AVG (length) AS avg_length
+FROM film
+
+
+SELECT mode() WITHIN GROUP (ORDER BY create_date)
+AS modal_value
+    FROM customer
