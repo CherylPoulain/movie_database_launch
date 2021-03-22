@@ -1,16 +1,16 @@
 __QUERIES TO ORDER DATA__
 
-_Query to select every film from “film” table, with the movies sorted by title from A to Z_
+**Query to select every film from “film” table, with the movies sorted by title from A to Z**
 SELECT * FROM film
 ORDER BY title ASC
 
 
-_Query to select every film from “film” table, with the movies sorted by most recent release year_
+**Query to select every film from “film” table, with the movies sorted by most recent release year**
 SELECT * FROM film
 ORDER BY release_year DESC
 
 
-_Query to select every film from “film” table, with the movies sorted by highest to lowest rental rate _
+**Query to select every film from “film” table, with the movies sorted by highest to lowest rental rate **
 SELECT * FROM film
 ORDER BY rental_rate DESC
 
@@ -18,13 +18,13 @@ ORDER BY rental_rate DESC
 
 __QUERIES TO GROUP DATA__
 
-_Query to answer : What is the average rental rate for each rating category?_
+**Query to answer : What is the average rental rate for each rating category?**
 SELECT rating, AVG(rental_rate)
 FROM film
 GROUP BY rating
 
 
-_Query to answer : What are the minimum and maximum rental durations for each rating category?_
+**Query to answer : What are the minimum and maximum rental durations for each rating category?**
 SELECT rating, MIN(rental_duration),MAX(rental_duration)
 FROM film
 GROUP BY rating
