@@ -1,4 +1,4 @@
-_Query for checking Film Table for duplicates_
+**Query for checking Film Table for duplicates**
 
 SELECT film_id,
        title,
@@ -18,7 +18,7 @@ HAVING COUNT(*)>1
 
 
 
-_Query for checking Film Table for missing data_
+**Query for checking Film Table for missing data**
 
 SELECT film_id
 FROM film
@@ -38,7 +38,7 @@ WHERE language_id = NULL
 
 
 
-_Queries to summarize data by calculating descriptive statistics_
+**Queries to summarize data by calculating descriptive statistics**
 
 SELECT MIN (rental_rate) AS min_rent,
 MAX (rental_rate) AS max_rent
